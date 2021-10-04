@@ -1,3 +1,9 @@
+- name: installing jenkins in ubuntu 16.04
+  hosts: "10.0.2.15"
+  remote_user: ubuntu
+  gather_facts: False
+  become: True
+
 tasks:
   - name: install python 2
     raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
