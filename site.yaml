@@ -5,10 +5,10 @@
 
   tasks:
     - name: apt update
-      raw: apt -y update
+      raw: apt update -y
 
     - name: install python 2
-      raw: apt install -y python-minimal
+      raw: apt install python-minimal -y
 
     - name: install curl and git
       apt: 
