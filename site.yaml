@@ -4,23 +4,23 @@
   become: True
 
   tasks:
-#    - name: Update apt-get repo and cache
-#      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+    - name: Update apt-get repo and cache
+      apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
 
-#    - name: install python 2
-#      apt: 
-#        pkg: ['python-minimal']
-#        state: present
+    - name: install python 2
+      apt: 
+        pkg: ['python-minimal']
+        state: present
 
-#    - name: install curl and git
-#      apt: 
-#        pkg: ['vim','git','curl']
-#        state: present
+    - name: install curl and git
+      apt: 
+        pkg: ['vim','git','curl']
+        state: present
 
     - name: adding jenkins gpg key
       apt_key:
         url: https://pkg.jenkins.io/debian/jenkins-ci.org.key
-        state: present
+#        state: present
 
     - name: jeknins repository to system
       apt_repository:
