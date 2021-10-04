@@ -4,12 +4,15 @@
   become: True
 
   tasks:
+    - name: apt update
+      raw: apt -y update
+
     - name: install python 2
-      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      raw: apt install -y python-minimal
 
     - name: install curl and git
       apt: 
-        pkg: ['vim','bc','curl']
+        pkg: ['vim','git','curl']
         state: present
 
     - name: adding jenkins gpg key
